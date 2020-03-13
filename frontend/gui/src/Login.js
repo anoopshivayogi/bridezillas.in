@@ -53,14 +53,14 @@ class Login extends Component {
     var apiBaseUrl = "http://localhost:8000/rest-auth/";
     var self = this;
     var payload = {
-      email: this.state.username,
+      username: this.state.username,
       password: this.state.password
     };
     axios
-      .post(apiBaseUrl + "login", payload)
+      .post(apiBaseUrl + "login/", payload)
       .then(function(response) {
         console.log(response);
-        if (response.data.code == 200) {
+        if (response.status == 200) {
           console.log("Login successful");
           var uploadScreen = [];
           uploadScreen.push(
@@ -70,7 +70,7 @@ class Login extends Component {
             loginPage: [],
             uploadScreen: uploadScreen
           });
-        } else if (response.data.code == 204) {
+        } else if (response.status == 204) {
           console.log("Username password do not match");
           alert("username password do not match");
         } else {

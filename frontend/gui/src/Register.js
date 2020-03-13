@@ -40,6 +40,14 @@ class Register extends Component {
             />
             <br />
             <TextField
+              hintText="Enter your User Name"
+              floatingLabelText="User Name"
+              onChange={(event, newValue) =>
+                this.setState({ username: newValue })
+              }
+            />
+            <br />
+            <TextField
               hintText="Enter your Email"
               type="email"
               floatingLabelText="Email"
@@ -82,6 +90,7 @@ class Register extends Component {
       first_name: this.state.first_name,
       last_name: this.state.last_name,
       email: this.state.email,
+      username: this.state.username,
       password1: this.state.password,
       password2: this.state.password
     };
@@ -90,7 +99,7 @@ class Register extends Component {
       .then(function(response) {
         console.log(response);
         if (response.data.code == 200) {
-          //  console.log("registration successfull");
+           console.log("registration successfull");
           var loginscreen = [];
           loginscreen.push(<Login parentContext={this} />);
           var loginmessage = "Not Registered yet.Go to registration";
