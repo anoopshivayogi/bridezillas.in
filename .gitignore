@@ -46,3 +46,6 @@ spritesmith.scss
 
 # templated email
 tmp_email/
+
+
+/src/**/*.css

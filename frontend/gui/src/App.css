@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
-}
+.navbar {
+  padding: 20px;
+  margin-bottom: 40px;
+  background-color: #20232a; }
+  .navbar .bwm-search {
+    height: 50px;
+    width: 300px !important; }
+  .navbar .navbar-brand {
+    margin-right: 30px;
+    font-size: 27px;
+    letter-spacing: 1px;
+    color: #61dafb !important;
+    font-weight: 500; }
+  .navbar .nav-item {
+    font-size: 14px; }
+  .navbar .btn-bwm-search {
+    border-color: #61dafb;
+    color: #61dafb; }
+    .navbar .btn-bwm-search:hover, .navbar .btn-bwm-search:focus, .navbar .btn-bwm-search:active {
+      background-color: transparent !important;
+      border-color: #61dafb !important;
+      color: #61dafb !important;
+      box-shadow: none; }
+  .navbar .nav-item {
+    color: #ededed; }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.bwm-form {
+  color: #484848; }
+  .bwm-form h1 {
+    font-weight: 700;
+    margin-bottom: 30px; }
+  .bwm-form .image-container {
+    position: relative; }
+    .bwm-form .image-container img {
+      width: 100%;
+      border-radius: 5px; }
+  .bwm-form label {
+    font-size: 12px; }
+  .bwm-form .form-text {
+    font-size: 13px; }
+  .bwm-form .catchphrase {
+    text-align: center;
+    font-size: 42px;
+    position: absolute;
+    color: #f1f1f1;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+    letter-spacing: 1px; }
+  .bwm-form .btn-form {
+    margin-top: 15px; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.bwm-res-errors {
+  margin: 10px 0; }
+  .bwm-res-errors p {
+    margin-bottom: 5px; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.clickable:hover {
+  cursor: pointer; }
+
+.page-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px; }
+
+.btn-bwm {
+  background-color: #61dafb;
+  border-color: #61dafb;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  padding: 15px 30px;
+  font-size: 20px; }
+  .btn-bwm:hover, .btn-bwm:focus, .btn-bwm:active {
+    border-color: #61dafb;
+    background-color: #61dafb; }
