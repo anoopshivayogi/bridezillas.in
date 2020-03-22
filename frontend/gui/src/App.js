@@ -1,35 +1,49 @@
-import React, {Component} from "react";
-import "./App.css";
-import LoginScreen from "./LoginScreen"
-import logo from "./logo.svg";
+import React, { Component } from "react";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 
+import * as redux from "redux";
+
+import { Provider } from "react-redux";
+
+import Header from "./components/shared/Header";
+import Login from "./components/login/Login";
+import { Register } from "./components/register/Register";
+import { Dashboard } from "./components/dashboard/Dashboard";
+
+import * as actions from "./actions";
+import "./App.css";
+
+const store = require("./reducers").init();
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loginPage: [],
-      uploadScreen: []
-    };
-  }
   componentWillMount() {
-    var loginPage = [];
-    loginPage.push(<LoginScreen parentContext={this} />);
-    this.setState({
-      loginPage: loginPage
-    });
+    this.checkAuthState();
   }
+
+  checkAuthState() {
+    store.dispatch(actions.checkAuthState());
+  }
+
+  logout() {
+    store.dispatch(actions.logout());
+  }
+
   render() {
     return (
-      <div className="App">
-        {this.state.loginPage}
-        {this.state.uploadScreen}
-      </div>
+      <Provider store={store}>
+        <BrowserRouter>
+          <div className="App">
+            <Header logout={this.logout}/>
+            <div className="container">
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/Register" component={Register} />
+              <Route exact path="/dashboard" component={Dashboard} />
+            </div>
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
-const style = {
-  margin: 15
-};
 
 export default App;
